@@ -1,0 +1,10 @@
+<h1>My Articles:</h1>
+<ul>
+<% @articles.each do |article| %>
+  <li><%= link_to "#{article.title.capitalize}", article_path(article) %>
+   <%= link_to "delete article",article_path(article),method: :delete, data: { confirm: "Are you sure?" }  %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "create new article!",new_article_path %>
